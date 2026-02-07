@@ -16,12 +16,12 @@ router.post("/claim/upload", upload.single("file"), async (req, res) => {
 
     const text = await readPDF(req.file.path);
 
-    console.log("📄 PDF TEXT EXTRACTED:\n", text);
+    console.log(" PDF TEXT EXTRACTED:\n", text);
 
 
     const extractedFields = await extractFieldsFromText(text);
 
-    console.log("🤖 AI RESULT:", extractedFields);
+    console.log(" AI RESULT:", extractedFields);
 
  
     const decision = decideClaimRoute(extractedFields);
@@ -34,7 +34,7 @@ router.post("/claim/upload", upload.single("file"), async (req, res) => {
     });
 
   } catch (err) {
-    console.log("❌ ERROR:", err);
+    console.log(" ERROR:", err);
     res.status(500).send("Error processing claim");
   }
 });

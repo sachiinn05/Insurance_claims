@@ -18,7 +18,7 @@ async function readPDF(filePath) {
       text += strings.join(" ");
     }
 
-    console.log("📄 PDF TEXT EXTRACTED:\n", text); // 🔥 debug
+    console.log(" PDF TEXT EXTRACTED:\n", text);
     return text;
 
   } catch (err) {
