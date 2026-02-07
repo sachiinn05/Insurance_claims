@@ -6,21 +6,20 @@ AI-powered backend system that processes FNOL (First Notice of Loss) insurance d
 
 ## 🚀 Problem Statement
 
-Insurance companies receive FNOL documents in unstructured formats like PDFs, emails, and text. Manual processing is slow, error-prone, and not scalable.
+Insurance companies receive FNOL documents in unstructured formats such as PDFs, emails, and text files. Manual processing is slow, error-prone, and not scalable.
 
 This system automates the workflow by:
-
-- Reading FNOL documents  
-- Extracting key claim fields using AI  
-- Detecting missing or suspicious information  
-- Routing claims into the correct processing pipeline  
+- Reading FNOL documents
+- Extracting key claim fields using AI
+- Detecting missing or suspicious information
+- Routing claims into the correct processing pipeline
 
 ---
 
 ## 🎯 Features
 
 - 📄 Upload FNOL documents (PDF/TXT)
-- 🤖 AI-based field extraction
+- 🤖 AI-based claim field extraction
 - 🧠 Missing data detection
 - 🔍 Fraud keyword detection
 - 🧭 Intelligent claim routing engine
@@ -31,21 +30,21 @@ This system automates the workflow by:
 
 ## 🏗 System Architecture
 
-Client (Postman / UI)  
-↓  
-File Upload API (Express + Multer)  
-↓  
-PDF/Text Extraction  
-↓  
-LLM (AI Extraction)  
-↓  
-Structured Claim Fields  
-↓  
-Decision Engine (Routing Rules)  
-↓  
-MongoDB Storage  
-↓  
-JSON Response  
+Client (Postman / UI)
+↓
+File Upload API (Express + Multer)
+↓
+PDF/Text Extraction
+↓
+LLM (AI Extraction)
+↓
+Structured Claim Fields
+↓
+Decision Engine (Routing Rules)
+↓
+MongoDB Storage
+↓
+JSON Response
 
 ---
 
@@ -53,15 +52,15 @@ JSON Response
 
 LLM is used to convert unstructured FNOL text into structured JSON.
 
-Reason:
+**Why AI?**
 - FNOL documents vary in format
-- Regex fails on real-world text
+- Regex is unreliable for real-world text
 - AI understands context & variations
 
 Routing decisions remain rule-based for:
-- explainability
-- compliance
-- auditability
+- Explainability
+- Compliance
+- Auditability
 
 ---
 
@@ -91,47 +90,45 @@ Routing decisions remain rule-based for:
 
 ## 📂 Project Structure
 
-src/  
- ├── config/  
- │   └── db.js  
- ├── middleware/  
- │   └── upload.js  
- ├── models/  
- │   └── claim.js  
- ├── routes/  
- │   └── claim.js  
- ├── services/  
- │   ├── aiExtractionService.js  
- │   └── decisionService.js  
- ├── utils/  
- │   └── pdfReader.js  
- └── app.js  
+src/
+├── config/
+│ └── db.js
+├── middleware/
+│ └── upload.js
+├── models/
+│ └── claim.js
+├── routes/
+│ └── claim.js
+├── services/
+│ ├── aiExtractionService.js
+│ └── decisionService.js
+├── utils/
+│ └── pdfReader.js
+└── app.js
 
 ---
 
 ## ▶️ How to Run
 
 ### 1️⃣ Install dependencies
-
 npm install
 
 ### 2️⃣ Add environment variables
 
-Create `.env`
+Create a `.env` file:
 
 PORT=8001  
 MONGO_URI=your_mongodb_url  
 OPENROUTER_API_KEY=your_ai_key  
 
 ### 3️⃣ Start server
-
 npm run dev
 
 ---
 
 ## 🧪 API Testing
 
-### POST `/claim/upload`
+### POST /claim/upload
 
 Body → form-data
 
@@ -157,9 +154,9 @@ Upload FNOL document.
 ## 🧠 Engineering Decisions
 
 - AI for extraction (handles messy input)
-- Rules for routing (predictable decisions)
+- Rule-based routing for predictable decisions
 - MongoDB for persistence
-- Modular architecture
+- Modular and scalable architecture
 
 ---
 
@@ -168,7 +165,7 @@ Upload FNOL document.
 - Parsing real-world PDFs
 - Handling inconsistent document formats
 - Structuring LLM output into strict JSON
-- Routing logic design
+- Designing routing logic
 
 ---
 
@@ -185,12 +182,6 @@ Upload FNOL document.
 ## 👨‍💻 Author
 
 Sachin Singh  
-Full Stack Developer | Node.js | MERN | AI Integration  
+Full Stack Developer | MERN | AI Integration  
 
-GitHub: https://github.com/sachiinn05  
-
----
-
-## 🎤 How to explain this project in interview
-
-I built an AI-powered insurance FNOL processing backend that converts unstructured claim documents into structured JSON using LLMs. Then a rule-based engine routes claims into fast-track, manual review, investigation, or specialist queues. The system is modular, scalable, and designed to reflect real-world insurance workflows.
+GitHub: https://github.com/sachiinn05
